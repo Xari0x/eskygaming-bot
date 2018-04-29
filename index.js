@@ -262,6 +262,20 @@ client.on('message', msg => {
         msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
     }
 
+    if (command === "inventory"){
+    	connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+    		let bronze = rows[0].bronze;
+    		let iron = rows[0].iron;
+    		let gold = rows[0].gold;
+        	var inventaire_msg = new Discord.RichEmbed()
+        	    .setColor('#8e44ad')
+        	    .addField("Inventaire de " + msg.author.username, `**Bronze:** *${bronze}*\n**Argent:** *${iron}*\n**Or:** *${gold}*`)
+        	    .setTimestamp()
+        	    .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        	msg.guild.channels.find("name", "bot").sendEmbed(inventaire_msg)
+        }
+    }
+
     if (command === "mine"){
         minerai_random = Math.floor(Math.random() * (3 - 0) + 0)
     	quantite_random = Math.floor(Math.random() * (20 - 1) + 1)
