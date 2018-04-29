@@ -33,8 +33,8 @@ client.on('message', msg => {
     		}else if (msg.content < number_random){
     			msg.reply("Plus grand !")
     		}else{
-    			let wins = rows[0].wins;
     			connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+				let wins = rows[0].wins;
     				msg.reply("Tu a gagné la partie !")
     				party_launch = false;
     				number_random = 0
