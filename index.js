@@ -302,6 +302,7 @@ client.on("guildMemberAdd", member => {
 // Systéme d'XP.
 client.on('message', msg => {
     connection.query("SELECT * FROM xp WHERE userid = " + msg.author.id, (err, rows) =>{
+    	if(err) throw err;
 
         let sql;
 
