@@ -354,7 +354,7 @@ client.on('message', msg => {
        			if (level === 1) {
        				if (bronze === 200) {
        					msg.reply("Tu as amélioré ta base level 2 !")
-       					sql = `UPDATE eskygaming SET bronze = ${bronze - 200} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 200}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
