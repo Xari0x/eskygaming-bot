@@ -305,7 +305,7 @@ client.on('message', msg => {
 
         let sql;
 
-        if(row.length < 1) {
+        if(row.length === null) {
             sql = `INSERT INTO xp (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, 0, 1, 0)`
         } else {
             let xp = row[0].xp;
