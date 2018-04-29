@@ -273,6 +273,18 @@ client.on('message', msg => {
             	.setTimestamp()
             	.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
         	msg.guild.channels.find("name", "bot").sendEmbed(mine_msg)
+        	
+        	connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+    		if(err) throw err;
+        	let sql;
+        	if(rows.length < 1) {
+        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, ${quantite_random}, 0, 0, 1, 0)`
+        	} else {
+        		let bronze = rows[0].bronze;
+        		sql = `UPDATE eskygaming SET bronze = ${bronze + quantite_random} WHERE userid = '${msg.author.id}'`
+        	}
+        	connection.query(sql, console.log);
+    		});
     	} else if (minerai_random === 1) {
 			var mine_msg = new Discord.RichEmbed()
             	.setColor('#8e44ad')
@@ -280,6 +292,18 @@ client.on('message', msg => {
             	.setTimestamp()
             	.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
         	msg.guild.channels.find("name", "bot").sendEmbed(mine_msg)
+
+        	connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+    		if(err) throw err;
+        	let sql;
+        	if(rows.length < 1) {
+        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, ${quantite_random}, 0, 1, 0)`
+        	} else {
+        		let iron = rows[0].iron;
+        		sql = `UPDATE eskygaming SET iron = ${iron + quantite_random} WHERE userid = '${msg.author.id}'`
+        	}
+        	connection.query(sql, console.log);
+        	});
     	} else if (minerai_random === 2) {
 			var mine_msg = new Discord.RichEmbed()
             	.setColor('#8e44ad')
@@ -287,6 +311,17 @@ client.on('message', msg => {
             	.setTimestamp()
             	.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
         	msg.guild.channels.find("name", "bot").sendEmbed(mine_msg)
+        	connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+    		if(err) throw err;
+        	let sql;
+        	if(rows.length < 1) {
+        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, ${quantite_random}, 1, 0)`
+        	} else {
+        		let gold = rows[0].gold;
+        		sql = `UPDATE eskygaming SET gold = ${gold + quantite_random} WHERE userid = '${msg.author.id}'`
+        	}
+        	connection.query(sql, console.log);
+        	});
     	}
     }
 
