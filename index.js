@@ -309,7 +309,7 @@ client.on('message', msg => {
         if(rows.length < 1) {
             sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, 0, 1, 0)`
         } else {
-            let xp = rows[2].eskygaming;
+            let xp = rows[2].xp;
             sql = `UPDATE eskygaming SET xp = ${xp + 1} WHERE userid = '${msg.author.id}'`
         }
         
