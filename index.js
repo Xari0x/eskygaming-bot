@@ -262,6 +262,98 @@ client.on('message', msg => {
         msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
     }
 
+    if (command === "upgrade"){
+    	connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+    		let bronze = rows[0].bronze;
+    		let iron = rows[0].iron;
+    		let gold = rows[0].gold;
+    		let level = rows[0].level;
+       		if (args[0] === "info") {
+       			if (level === 1) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*200* **Bronze**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 2) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*200* **Argent**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 3) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*200* **Or**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 4) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*200* **Bronze** et *200* **Argent**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 5) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*200* **Argent** et *200* **Or**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 6) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*500* **Bronze** et *500* **Argent**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 7) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*500* **Argent** et *500* **Or**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 8) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*800* **Or**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 9) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*500* **Argent** et *800* **Or**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 10) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "*1 000* **Or**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			}
+       		}
+        });
+    }
+
     if (command === "inventory"){
     	connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
     		let bronze = rows[0].bronze;
