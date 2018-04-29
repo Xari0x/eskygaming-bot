@@ -58,7 +58,7 @@ client.on('message', msg => {
             .setColor('#8e44ad')
             .addField("General", "`?help | Affiche toutes les commandes.`\n`?info | Affiche des informations sur le serveur Discord.`\n`?xp | Affiche le nombre d'xp que vous avez.`\n`?member | Vous donne le grade Membre.`")
             .addField("Fun", "`?wasted | Génére une image avec votre photo de profil.`\n`?beautiful | Génére une image avec votre photo de profil.`\n`?bob | Génére une image avec votre photo de profil.`")           .addField("Fortnite", "`?shop featured | Affiche les featured du shop Fortnite.`\n`?shop daily | Affiche les daily du shop Fortnite.`")
-            .addField("Jeux", "`?guess-number start/stop | Sert a lancée ou a stoppée une partie de guess number.`")
+            .addField("Jeux", "`?guess-number start/stop | Sert a lancée ou a stoppée une partie de guess number.`\n`?guess-number stat | Sert a afficher vos nombres de wins.`")
             .addField("Roleplay", "`?mine | Sert a miner des minerais.`\n`?inventory | Sert a afficher ton inventaire.`\n`?upgrade info | Sert a t'afficher des informations sur ta base.`\n`?upgrade | Sert a améliorer ta base.`")
             .addField("Modération", "`?ban @membre | Sert a bannir un membre.`\n`?kick @membre | Sert a kick un membre.`")
             .setTimestamp()
@@ -533,6 +533,17 @@ client.on('message', msg => {
     		}else{
     			msg.reply("Aucune partie n'est lancée ...")
     		}
+    	}
+    	if (args[0] === "stat"){
+    		connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+				let wins = rows[0].wins;
+        		var info_msg = new Discord.RichEmbed()
+            		.setColor('#8e44ad')
+            		.addField("Tu a gagné", wins + " partie(s).")
+            		.setTimestamp()
+            		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+       			msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
+			});
     	}
     }
 });
