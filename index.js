@@ -263,7 +263,7 @@ client.on('message', msg => {
     }
 
     if (command === "mine"){
-        minerai_random = Math.floor(Math.random() * (2 - 0) + 0)
+        minerai_random = Math.floor(Math.random() * (3 - 0) + 0)
     	quantite_random = Math.floor(Math.random() * (20 - 1) + 1)
     	console.log(minerai_random + " " + quantite_random);
     	if (minerai_random === 0) {
