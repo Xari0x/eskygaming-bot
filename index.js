@@ -301,14 +301,14 @@ client.on("guildMemberAdd", member => {
 
 // Systéme d'XP.
 client.on('message', msg => {
-    connection.query("SELECT * FROM xp WHERE userid = " + msg.author.id, (err, row) =>{
+    connection.query("SELECT * FROM xp WHERE userid = " + msg.author.id, (err, rows) =>{
 
         let sql;
 
-        if(row.length === null) {
+        if(rows.length < 1) {
             sql = `INSERT INTO xp (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, 0, 1, 0)`
         } else {
-            let xp = row[0].xp;
+            let xp = rows[0].xp;
             sql = `UPDATE xp SET xp = ${xp + 1} WHERE userid = '${msg.author.id}'`
         }
         
