@@ -33,10 +33,14 @@ client.on('message', msg => {
     		}else if (msg.content < number_random){
     			msg.reply("Plus grand !")
     		}else{
-    			msg.reply("Tu a gagné la partie !")
-    			party_launch = false;
-    			number_random = 0
-    			console.log(number_random, party_launch)
+    			connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+    				msg.reply("Tu a gagné la partie !")
+    				party_launch = false;
+    				number_random = 0
+    				console.log(number_random, party_launch)
+    				sql = `UPDATE eskygaming SET wins = ${wins + 1} WHERE userid = '${msg.author.id}'`
+       				connection.query(sql, console.log);
+    			});
     		}
     	}
     }
