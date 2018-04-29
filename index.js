@@ -54,6 +54,7 @@ client.on('message', msg => {
             .addField("General", "`?help | Affiche toutes les commandes.`\n`?info | Affiche des informations sur le serveur Discord.`\n`?xp | Affiche le nombre d'xp que vous avez.`\n`?member | Vous donne le grade Membre.`")
             .addField("Fun", "`?wasted | Génére une image avec votre photo de profil.`\n`?beautiful | Génére une image avec votre photo de profil.`\n`?bob | Génére une image avec votre photo de profil.`")           .addField("Fortnite", "`?shop featured | Affiche les featured du shop Fortnite.`\n`?shop daily | Affiche les daily du shop Fortnite.`")
             .addField("Jeux", "`?guess-number start/stop | Sert a lancée ou a stoppée une partie de guess number.`")
+            .addField("Roleplay", "`?mine | Sert a miner des minerais.`\n`?inventory | Sert a afficher ton inventaire.`\n`?upgrade info | Sert a t'afficher des informations sur ta base.`\n`?upgrade | Sert a améliorer ta base.`")
             .addField("Modération", "`?ban @membre | Sert a bannir un membre.`\n`?kick @membre | Sert a kick un membre.`")
             .setTimestamp()
             .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
@@ -426,7 +427,6 @@ client.on('message', msg => {
        			} else if (level === 10) {
        				msg.reply("Tu est déja au level max ...")
        			}
-
        		}
         });
     }
