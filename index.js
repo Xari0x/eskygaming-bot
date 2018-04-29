@@ -61,7 +61,7 @@ client.on('message', msg => {
 	}
 
 	if (command === "xp"){
-        connection.query(`SELECT * FROM xp WHERE userid = '${msg.author.id}'`, (err, rows) => {
+        connection.query(`SELECT * FROM eskygaming WHERE userid = '${msg.author.id}'`, (err, rows) => {
             if (err) throw err;
 
             let xp = rows[2].xp;
