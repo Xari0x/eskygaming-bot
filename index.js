@@ -362,7 +362,7 @@ client.on('message', msg => {
        			} else if (level === 2) {
        				if (iron === 200) {
        					msg.reply("Tu as amélioré ta base level 3 !")
-       					sql = `UPDATE eskygaming SET iron = ${iron - 200} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET iron = ${iron - 200}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
@@ -370,7 +370,7 @@ client.on('message', msg => {
        			} else if (level === 3) {
        				if (gold === 200) {
        					msg.reply("Tu as amélioré ta base level 4 !")
-       					sql = `UPDATE eskygaming SET gold = ${gold - 200} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET gold = ${gold - 200}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
@@ -378,7 +378,7 @@ client.on('message', msg => {
        			} else if (level === 4) {
        				if (bronze === 200 && iron === 200) {
        					msg.reply("Tu as amélioré ta base level 5 !")
-       					sql = `UPDATE eskygaming SET bronze = ${bronze - 200}, iron = ${iron - 200} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 200}, iron = ${iron - 200}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
@@ -386,7 +386,7 @@ client.on('message', msg => {
        			} else if (level === 5) {
        				if (iron === 200 && gold === 200) {
        					msg.reply("Tu as amélioré ta base level 6 !")
-       					sql = `UPDATE eskygaming SET iron = ${iron - 200}, gold = ${gold - 200} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET iron = ${iron - 200}, gold = ${gold - 200}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
@@ -394,7 +394,7 @@ client.on('message', msg => {
        			} else if (level === 6) {
        				if (bronze === 500 && iron === 500) {
        					msg.reply("Tu as amélioré ta base level 7 !")
-       					sql = `UPDATE eskygaming SET bronze = ${bronze - 500}, iron = ${iron - 500} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 500}, iron = ${iron - 500}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
@@ -402,7 +402,7 @@ client.on('message', msg => {
        			} else if (level === 7) {
        				if (bronze === 500 && iron === 500) {
        					msg.reply("Tu as amélioré ta base level 8 !")
-       					sql = `UPDATE eskygaming SET iron = ${iron - 500}, gold = ${gold - 500} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET iron = ${iron - 500}, gold = ${gold - 500}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
@@ -410,7 +410,7 @@ client.on('message', msg => {
        			} else if (level === 8) {
        				if (gold === 800) {
        					msg.reply("Tu as amélioré ta base level 9 !")
-       					sql = `UPDATE eskygaming SET gold = ${gold - 800} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET gold = ${gold - 800}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
@@ -418,7 +418,7 @@ client.on('message', msg => {
        			} else if (level === 9) {
        				if (iron === 500 && gold === 800) {
        					msg.reply("Tu as amélioré ta base level 8 !")
-       					sql = `UPDATE eskygaming SET iron = ${iron - 500}, gold = ${gold - 800} WHERE userid = '${msg.author.id}'`
+       					sql = `UPDATE eskygaming SET iron = ${iron - 500}, gold = ${gold - 800}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
