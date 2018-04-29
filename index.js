@@ -272,21 +272,21 @@ client.on('message', msg => {
             	.addField("Tu a gagné:", quantite_random + " bronze !")
             	.setTimestamp()
             	.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
-        	msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
+        	msg.guild.channels.find("name", "bot").sendEmbed(mine_msg)
     	} else if (minerai_random === 1) {
 			var mine_msg = new Discord.RichEmbed()
             	.setColor('#8e44ad')
             	.addField("Tu a gagné:", quantite_random + " argent !")
             	.setTimestamp()
             	.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
-        	msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
+        	msg.guild.channels.find("name", "bot").sendEmbed(mine_msg)
     	} else if (minerai_random === 2) {
 			var mine_msg = new Discord.RichEmbed()
             	.setColor('#8e44ad')
             	.addField("Tu a gagné:", quantite_random + " or !")
             	.setTimestamp()
             	.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
-        	msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
+        	msg.guild.channels.find("name", "bot").sendEmbed(mine_msg)
     	}
     }
 
