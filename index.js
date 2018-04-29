@@ -12,6 +12,18 @@ client.on('ready', () => {
   console.log(`Connecté en tant que ${client.user.tag}!`);
 });
 
+// Connection a la base de donnée.
+const connection = MySQL.createConnection({
+    host     : "db4free.net",
+    user     : process.env.USER,
+    port     : "3306",
+    password : process.env.PASSWORD,
+    database : process.env.DB
+});
+connection.connect(err => {
+    console.log("Connecté a la base de donnée.");
+});
+
 // Guess the number.
 client.on('message', msg => {
 	if (party_launch && msg.content != null){
@@ -39,7 +51,7 @@ client.on('message', msg => {
 	if (command === "help"){
 		var help_msg = new Discord.RichEmbed()
             .setColor('#8e44ad')
-            .addField("General", "`?help | Affiche toutes les commandes.`\n`?info | Affiche des informations sur le serveur Discord.`\n`?xp | Affiche le nombre d'xp que vous avez. (temporairement désactivé)`\n`?member | Vous donne le grade Membre.`")
+            .addField("General", "`?help | Affiche toutes les commandes.`\n`?info | Affiche des informations sur le serveur Discord.`\n`?xp | Affiche le nombre d'xp que vous avez.`\n`?member | Vous donne le grade Membre.`")
             .addField("Fun", "`?wasted | Génére une image avec votre photo de profil.`\n`?beautiful | Génére une image avec votre photo de profil.`\n`?bob | Génére une image avec votre photo de profil.`")           .addField("Fortnite", "`?shop featured | Affiche les featured du shop Fortnite.`\n`?shop daily | Affiche les daily du shop Fortnite.`")
             .addField("Jeux", "`?guess-number start/stop | Sert a lancée ou a stoppée une partie de guess number.`")
             .addField("Modération", "`?ban @membre | Sert a bannir un membre.`\n`?kick @membre | Sert a kick un membre.`")
@@ -47,6 +59,49 @@ client.on('message', msg => {
             .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
         msg.guild.channels.find("name", "bot").sendEmbed(help_msg)
 	}
+
+	if (command === "xp"){
+        connection.query(`SELECT * FROM xp WHERE userid = '${msg.author.id}'`, (err, rows) => {
+            if (err) throw err;
+
+            let xp = rows[0].xp;
+
+            if (xp > 100){
+                var grade_bronze = msg.guild.roles.find("name", "Bronze");
+                msg.member.addRole(grade_bronze)
+            }
+            if (xp > 300){
+                var grade_argent = msg.guild.roles.find("name", "Argent");
+                msg.member.addRole(grade_argent)
+            }
+            if (xp > 500){
+                var grade_or = msg.guild.roles.find("name", "Or");
+                msg.member.addRole(grade_or)
+            }
+            if (xp > 800){
+                var grade_platine = msg.guild.roles.find("name", "Platine");
+                msg.member.addRole(grade_platine)
+            }
+            if (xp > 1000){
+                var grade_diamant = msg.guild.roles.find("name", "Diamant");
+                msg.member.addRole(grade_diamant)
+            }
+            if (xp > 2000){
+                var grade_maitre = msg.guild.roles.find("name", "Maître");
+                msg.member.addRole(grade_maitre)
+            }
+            if (xp > 5000){
+                var grade_challenger = msg.guild.roles.find("name", "Challenger");
+                msg.member.addRole(grade_challenger)
+            }
+            var xp_msg = new Discord.RichEmbed()
+                .setColor('#8e44ad')
+                .addField(`Niveau de ${msg.author.username}`, xp)
+                .setTimestamp()
+                .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+            msg.guild.channels.find("name", "bot").sendEmbed(xp_msg)
+        });
+    }
 
 	if (command === "info"){
         var info_msg = new Discord.RichEmbed()
@@ -243,3 +298,20 @@ client.on("guildMemberAdd", member => {
     member.guild.channels.find("name", "bienvenue").sendEmbed(bienvenue_msg)
     member.addRole(role)
 })
+
+// Systéme d'XP.
+client.on('message', msg => {
+    connection.query("SELECT * FROM xp WHERE userid = " + msg.author.id, (err, row) =>{
+
+        let sql;
+
+        if(row.length < 1) {
+            sql = `INSERT INTO xp (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, 0, 1, 0)`
+        } else {
+            let xp = row[0].xp;
+            sql = `UPDATE xp SET xp = ${xp + 1} WHERE userid = '${msg.author.id}'`
+        }
+        
+        connection.query(sql, console.log);
+    });
+});
