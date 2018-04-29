@@ -64,7 +64,7 @@ client.on('message', msg => {
         connection.query(`SELECT * FROM eskygaming WHERE userid = '${msg.author.id}'`, (err, rows) => {
             if (err) throw err;
 
-            let xp = rows[2];
+            let xp = rows[0].xp;
 
             if (xp > 100){
                 var grade_bronze = msg.guild.roles.find("name", "Bronze");
