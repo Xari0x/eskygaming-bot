@@ -273,6 +273,7 @@ client.on('message', msg => {
     		let bronze = rows[0].bronze;
     		let iron = rows[0].iron;
     		let gold = rows[0].gold;
+    		let diamond = rows[0].diamond;
     		let level = rows[0].level;
        		if (args[0] === "info") {
        			if (level === 1) {
@@ -351,6 +352,86 @@ client.on('message', msg => {
        				var infobase_msg = new Discord.RichEmbed()
         	    		.setColor('#8e44ad')
         	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**1 000 Bronze** et **1 000 Argent**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 11) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**1 000 Argent** et **1 000 Or**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 12) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**1 500 Bronze** et **1 500 Argent**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 13) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**2 000 Bronze**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 14) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**2 000 Bronze** et **2 000 Argent**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 15) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**2 000 Bronze** et **10 Diamants**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 16) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**2 500 Bronze** et **10 Diamants**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 17) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**2 000 Argent** et **10 Diamants**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 18) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**2 500 Argent** et **50 Diamants**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 19) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
+        	    		.addField("Pour passer au prochain level tu doit avoir", "**2 500 Bronze** et **100 Diamants**")
+        	    		.setTimestamp()
+        	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        			msg.guild.channels.find("name", "bot").sendEmbed(infobase_msg)
+       			} else if (level === 20) {
+       				var infobase_msg = new Discord.RichEmbed()
+        	    		.setColor('#8e44ad')
+        	    		.addField("Information de la base de " + msg.author.username, `**Ta base est level:** *${level}*`)
         	    		.addField("Pour passer au prochain level tu doit avoir", "**MAX**")
         	    		.setTimestamp()
         	    		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
@@ -423,14 +504,94 @@ client.on('message', msg => {
        				}
        			} else if (level === 9) {
        				if (iron > 500 && gold > 800) {
-       					msg.reply("Tu as amélioré ta base level 8 !")
+       					msg.reply("Tu as amélioré ta base level 10 !")
        					sql = `UPDATE eskygaming SET iron = ${iron - 500}, gold = ${gold - 800}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
        					connection.query(sql, console.log);
        				} else {
        					msg.reply("Tu n'as pas assez de ressources ...")
        				}
        			} else if (level === 10) {
-       				msg.reply("Tu est déja au level max ...")
+       				if (bronze > 1000 && iron > 1000) {
+       					msg.reply("Tu as amélioré ta base level 11 !")
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 1000}, iron = ${iron - 1000}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 11) {
+       				if (iron > 1000 && gold > 1000) {
+       					msg.reply("Tu as amélioré ta base level 12 !")
+       					sql = `UPDATE eskygaming SET iron = ${iron - 1000}, gold = ${gold - 1000}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 12) {
+       				if (bronze > 1500 && iron > 1500) {
+       					msg.reply("Tu as amélioré ta base level 13 !")
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 1500}, iron = ${iron - 1500}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 13) {
+       				if (bronze > 2000) {
+       					msg.reply("Tu as amélioré ta base level 14 !")
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 2000}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 14) {
+       				if (bronze > 2000 && iron > 2000) {
+       					msg.reply("Tu as amélioré ta base level 15 !")
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 2000}, iron = ${iron - 2000}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 15) {
+       				if (bronze > 2000 && diamond > 10) {
+       					msg.reply("Tu as amélioré ta base level 16 !")
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 2000}, diamond = ${diamond - 10}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 16) {
+       				if (bronze > 2500 && diamond > 10) {
+       					msg.reply("Tu as amélioré ta base level 17 !")
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 2500}, diamond = ${diamond - 10}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 17) {
+       				if (iron > 2000 && diamond > 10) {
+       					msg.reply("Tu as amélioré ta base level 18 !")
+       					sql = `UPDATE eskygaming SET diamond = ${diamond - 10}, iron = ${iron - 2000}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 18) {
+       				if (iron > 2500 && diamond > 50) {
+       					msg.reply("Tu as amélioré ta base level 19 !")
+       					sql = `UPDATE eskygaming SET iron = ${iron - 2500}, diamond = ${diamond - 50}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 19) {
+       				if (bronze > 2500 && diamond > 100) {
+       					msg.reply("Tu as amélioré ta base level 20 !")
+       					sql = `UPDATE eskygaming SET bronze = ${bronze - 2500}, diamond = ${diamond - 100}, level = ${level + 1} WHERE userid = '${msg.author.id}'`
+       					connection.query(sql, console.log);
+       				} else {
+       					msg.reply("Tu n'as pas assez de ressources ...")
+       				}
+       			} else if (level === 20) {
+       				msg.reply("Tu as atteins le level max ...")
        			}
        		}
         });
@@ -451,7 +612,7 @@ client.on('message', msg => {
     }
 
     if (command === "mine"){
-        minerai_random = Math.floor(Math.random() * (3 - 0) + 0)
+        minerai_random = Math.floor(Math.random() * (4 - 0) + 0)
     	quantite_random = Math.floor(Math.random() * (20 - 1) + 1)
     	console.log(minerai_random + " " + quantite_random);
     	if (minerai_random === 0) {
@@ -466,7 +627,7 @@ client.on('message', msg => {
     		if(err) throw err;
         	let sql;
         	if(rows.length < 1) {
-        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, ${quantite_random}, 0, 0, 1, 0)`
+        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, diamond, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, ${quantite_random}, 0, 0, 0, 1, 0)`
         	} else {
         		let bronze = rows[0].bronze;
         		sql = `UPDATE eskygaming SET bronze = ${bronze + quantite_random} WHERE userid = '${msg.author.id}'`
@@ -485,7 +646,7 @@ client.on('message', msg => {
     		if(err) throw err;
         	let sql;
         	if(rows.length < 1) {
-        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, ${quantite_random}, 0, 1, 0)`
+        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, diamond, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, ${quantite_random}, 0, 0, 1, 0)`
         	} else {
         		let iron = rows[0].iron;
         		sql = `UPDATE eskygaming SET iron = ${iron + quantite_random} WHERE userid = '${msg.author.id}'`
@@ -503,14 +664,31 @@ client.on('message', msg => {
     		if(err) throw err;
         	let sql;
         	if(rows.length < 1) {
-        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, ${quantite_random}, 1, 0)`
+        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, diamond, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, ${quantite_random}, 0, 1, 0)`
         	} else {
         		let gold = rows[0].gold;
         		sql = `UPDATE eskygaming SET gold = ${gold + quantite_random} WHERE userid = '${msg.author.id}'`
         	}
         	connection.query(sql, console.log);
         	});
-    	}
+    	} else if (minerai_random === 3) {
+			var mine_msg = new Discord.RichEmbed()
+            	.setColor('#8e44ad')
+            	.addField("Tu a gagné:", "1 diamant !")
+            	.setTimestamp()
+            	.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
+        	msg.guild.channels.find("name", "bot").sendEmbed(mine_msg)
+        	connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
+    		if(err) throw err;
+        	let sql;
+        	if(rows.length < 1) {
+        		sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, diamond, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, 0, 1, 1, 0)`
+        	} else {
+        		let diamond = rows[0].diamond;
+        		sql = `UPDATE eskygaming SET diamond = ${diamond + 1} WHERE userid = '${msg.author.id}'`
+        	}
+        	connection.query(sql, console.log);
+        	});
     }
 
     if (command === "guess-number"){
@@ -569,7 +747,7 @@ client.on('message', msg => {
         let sql;
 
         if(rows.length < 1) {
-            sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, 0, 1, 0)`
+            sql = `INSERT INTO eskygaming (userid, usertag, xp, bronze, iron, gold, diamond, level, wins) VALUES ('${msg.author.id}', '${msg.author.tag}', 1, 0, 0, 0, 0, 1, 0)`
         } else {
             let xp = rows[0].xp;
             sql = `UPDATE eskygaming SET xp = ${xp + 1} WHERE userid = '${msg.author.id}'`
