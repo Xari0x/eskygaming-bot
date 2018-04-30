@@ -725,7 +725,7 @@ client.on('message', msg => {
 			});
     	}
     }
-});
+};
 
 // Systéme de bienvenue.
 client.on("guildMemberAdd", member => {
