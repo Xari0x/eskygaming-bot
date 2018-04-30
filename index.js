@@ -602,9 +602,10 @@ client.on('message', msg => {
     		let bronze = rows[0].bronze;
     		let iron = rows[0].iron;
     		let gold = rows[0].gold;
+    		let diamond = rows[0].diamond;
         	var inventaire_msg = new Discord.RichEmbed()
         	    .setColor('#8e44ad')
-        	    .addField("Inventaire de " + msg.author.username, `**Bronze:** *${bronze}*\n**Argent:** *${iron}*\n**Or:** *${gold}*`)
+        	    .addField("Inventaire de " + msg.author.username, `**Bronze:** *${bronze}*\n**Argent:** *${iron}*\n**Or:** *${gold}*\n**Diamant:** *${diamond}*`)
         	    .setTimestamp()
         	    .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
         	msg.guild.channels.find("name", "bot").sendEmbed(inventaire_msg)
