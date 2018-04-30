@@ -722,10 +722,10 @@ client.on('message', msg => {
             		.setTimestamp()
             		.setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/4746c6bc75b7de27df5990a4fb70ec1c.png")
        			msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
-			});
+			}
     	}
     }
-};
+});
 
 // Systéme de bienvenue.
 client.on("guildMemberAdd", member => {
