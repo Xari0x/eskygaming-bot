@@ -122,11 +122,20 @@ client.on('message', msg => {
         if (args[0] === "create"){
             var room_msg = new Discord.RichEmbed()
                 .setColor('#8e44ad')
-                .addField("Room crée !", `Room privée ${msg.author.tag}`)
+                .addField("Room crée !", `Room ${msg.author.tag}`)
                 .setTimestamp()
                 .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
             msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
-            msg.guild.createChannel(`Room privée ${msg.author.tag}`, "voice");
+            msg.guild.createChannel(`Room ${msg.author.tag}`, "voice");
+        }
+        if (args[0] === "remove"){
+            var room_msg = new Discord.RichEmbed()
+                .setColor('#8e44ad')
+                .addField("Room suprimée !", `Room ${msg.author.tag}`)
+                .setTimestamp()
+                .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
+            msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
+            msg.guild.deleteChannel(`Room ${msg.author.tag}`, "voice");
         }
     }
 
