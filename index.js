@@ -118,6 +118,18 @@ client.on('message', msg => {
         msg.guild.channels.find("name", "bot").sendEmbed(info_msg)
     }
 
+    if (command === "room"){
+        if (args[0] === "create"){
+            var room_msg = new Discord.RichEmbed()
+                .setColor('#8e44ad')
+                .addField("Room crée !", `Room privée ${msg.author.tag}`)
+                .setTimestamp()
+                .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
+            msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
+            msg.guild.createChannel(`Room privée ${msg.author.tag}`, "voice");
+        }
+    }
+
     if (command === "ban"){
     	if (msg.guild.member(msg.author).hasPermission("BAN_MEMBERS")){
     		var usertoban = msg.mentions.users.first();
