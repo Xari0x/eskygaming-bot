@@ -24,6 +24,14 @@ connection.connect(err => {
     console.log("Connecté a la base de donnée.");
 });
 
+// Fonction
+
+function categorieroom(room) {
+    if (!room === null){
+        room.setParent('456141150852612126')
+    });
+}
+
 // Guess the number.
 client.on('message', msg => {
     if (party_launch && msg.content != null){
@@ -130,6 +138,7 @@ client.on('message', msg => {
                     .setTimestamp()
                     .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
                 msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
+                setTimeout(categorieroom, 1000, room_user);
             } else {
                 var room_msg = new Discord.RichEmbed()
                     .setColor('#8e44ad')
