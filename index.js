@@ -130,7 +130,6 @@ client.on('message', msg => {
                     .setTimestamp()
                     .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
                 msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
-                
             } else {
                 var room_msg = new Discord.RichEmbed()
                     .setColor('#8e44ad')
@@ -139,7 +138,6 @@ client.on('message', msg => {
                     .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
                 msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
             }
-            room_user.setParent('456141150852612126')
             
         } else if (args[0] === "delete"){
             if (room_user === null){
@@ -783,6 +781,12 @@ client.on("guildMemberAdd", member => {
     member.addRole(role)
 })
 
+// Room
+client.on('channelCreate', channel => {
+    if (channel.name.startsWith("🔒")){
+        channel.setParent('456141150852612126')
+    }
+});
 // Systéme d'XP.
 client.on('message', msg => {
     connection.query("SELECT * FROM eskygaming WHERE userid = " + msg.author.id, (err, rows) =>{
