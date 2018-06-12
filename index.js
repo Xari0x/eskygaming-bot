@@ -29,7 +29,7 @@ connection.connect(err => {
 function categorieroom(room) {
     if (!room === null){
         room.setParent('456141150852612126')
-    });
+    };
 }
 
 // Guess the number.
