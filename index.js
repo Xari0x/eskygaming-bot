@@ -140,13 +140,22 @@ client.on('message', msg => {
             }
             
         } else if (args[0] === "delete"){
-            var room_msg = new Discord.RichEmbed()
-                .setColor('#8e44ad')
-                .addField("Suppression d'une room privée ...", `Room ${msg.author.username}`)
-                .setTimestamp()
-                .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
-            msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
-            room_user.delete()
+            if (room_user === null){
+                var room_msg = new Discord.RichEmbed()
+                    .setColor('#8e44ad')
+                    .addField("Impossible de supprimer une room privée ...", `Room ${msg.author.username}`)
+                    .setTimestamp()
+                    .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
+                msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
+            } else {
+                var room_msg = new Discord.RichEmbed()
+                    .setColor('#8e44ad')
+                    .addField("Suppression d'une room privée ...", `Room ${msg.author.username}`)
+                    .setTimestamp()
+                    .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
+                msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
+                room_user.delete()
+            }
         }
     }
 
