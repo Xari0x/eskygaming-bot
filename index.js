@@ -130,7 +130,7 @@ client.on('message', msg => {
                     .setTimestamp()
                     .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
                 msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
-                setTimeout(categorieroom(room_user), 1000);
+                
             } else {
                 var room_msg = new Discord.RichEmbed()
                     .setColor('#8e44ad')
@@ -139,6 +139,7 @@ client.on('message', msg => {
                     .setFooter("Codé par Xari0x | Commande demandé par " + msg.author.username, "https://cdn.discordapp.com/avatars/282147518958272512/7fbeab6cdab3222d3a567b53eff434b9.png")
                 msg.guild.channels.find("name", "bot").sendEmbed(room_msg)
             }
+            room_user.setParent('456141150852612126')
             
         } else if (args[0] === "delete"){
             if (room_user === null){
@@ -768,16 +769,6 @@ client.on('message', msg => {
         }
     }
 }});
-
-
-// Fonction
-function categorieroom(room) {
-    if (room === null){
-        
-    } else {
-        room.setParent('456141150852612126')
-    }
-}
 
 // Systéme de bienvenue.
 client.on("guildMemberAdd", member => {
